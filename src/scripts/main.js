@@ -1,25 +1,55 @@
-import { products } from './data.js';
+import { SUPABASE_URL, SUPABASE_KEY } from './config.js';
 import { buscarCEP } from './viacep.js';
 
 let cart = [];
+let supabase;
+let products = [];
 
-document.addEventListener('DOMContentLoaded', () => {
-    renderProducts();
+document.addEventListener('DOMContentLoaded', async () => {
+    // @ts-ignore
+    supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    
+    await loadProducts();
     initRevealAnimations();
     initCart();
     initCheckout();
 });
 
+// PRODUCT FETCHING
+async function loadProducts() {
+    const grid = document.getElementById('product-grid');
+    
+    try {
+        const { data, error } = await supabase
+            .from('products')
+            .select('*')
+            .order('id', { ascending: false });
+
+        if (error) throw error;
+        
+        products = data;
+        renderProducts(products);
+    } catch (err) {
+        console.error("Erro ao carregar produtos:", err);
+        grid.innerHTML = '<p class="section-tag" style="color: #ff4d4d;">Erro ao carregar coleção. Verifique as credenciais do Supabase.</p>';
+    }
+}
+
 // PRODUCT RENDERING
-function renderProducts() {
+function renderProducts(productsList) {
     const grid = document.getElementById('product-grid');
     if (!grid) return;
 
-    grid.innerHTML = products.map((product) => {
+    if (productsList.length === 0) {
+        grid.innerHTML = '<p class="section-tag">Nenhum produto na coleção no momento.</p>';
+        return;
+    }
+
+    grid.innerHTML = productsList.map((product) => {
         return `
             <div class="product-card" data-reveal>
                 <div class="product-image-container">
-                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <img src="${product.image_url}" alt="${product.name}" class="product-image">
                 </div>
                 <div class="product-info">
                     <span class="product-tag">${product.collection}</span>
@@ -32,6 +62,9 @@ function renderProducts() {
             </div>
         `;
     }).join('');
+    
+    // Re-verify reveal animations for new items
+    initRevealAnimations();
 }
 
 function initParallax() {
