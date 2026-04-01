@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAFRAN | ESTAMPARIA E MARCA PRÓPRIA</title>
+    <meta name="description" content="LAFRAN - Estamparia premium com marca própria e coleções exclusivas. Nova coleção 333 e Angelic Vibes disponível agora.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/components.css">
+    
+    <!-- Favicon Simulation -->
+    <link rel="icon" type="image/png" href="src/assets/products/e898fba2-2563-4153-8f63-8fc200fdae05.jpg">
+</head>
+<body>
+
+    <!-- Promo Banner -->
+    <div style="background: var(--white); color: var(--bg-dark); text-align: center; font-size: 0.7rem; font-weight: 700; padding: 8px; letter-spacing: 2px;">
+        FRETE GRÁTIS EM COMPRAS ACIMA DE R$ 300
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="#" class="logo">LAFRAN</a>
+        <nav class="nav-links">
+            <a href="#new-collection">Nova Coleção</a>
+            <a href="#about">Sobre a Marca</a>
+        </nav>
+        <div class="header-actions">
+            <a href="#" style="font-size: 1.2rem;">🔍</a>
+            <a href="#" style="font-size: 1.2rem; position: relative;">
+                🛒
+                <span id="cart-count" style="position: absolute; top: -5px; right: -10px; background: var(--accent-blue); color: var(--bg-dark); font-size: 0.6rem; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s;">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section v2 -->
+    <section class="hero">
+        <h1 class="hero-title" data-reveal>
+            <span>LAFRAN</span>
+            <span style="opacity: 0.3; font-style: italic;">STUDIOS</span>
+        </h1>
+        <div class="hero-overlay-text">COLEÇÃO / 2026 / LIMITED</div>
+        <a href="#new-collection" class="btn-primary" style="margin-top: 40px;" data-reveal>Explorar Coleção</a>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee">
+        <div class="marquee-content">
+            <span class="marquee-text">NEW COLLECTION 2026 // LIMITED EDITION // 333 AURA // ANGELIC VIBES // </span>
+            <span class="marquee-text">NEW COLLECTION 2026 // LIMITED EDITION // 333 AURA // ANGELIC VIBES // </span>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section container">
+        <div class="about-content" data-reveal>
+            <span class="about-tag">STORY</span>
+            <h2 class="about-title">A ARTE DO <br> STREETWEAR</h2>
+            <p class="about-text">
+                A LAFRAN nasceu da intersecção entre o Caos Urbano e a Ordem Estética. 
+                Cada estampa é um manifesto visual projetado para quem não aceita o óbvio.
+            </p>
+        </div>
+        <div class="about-visual" data-reveal>
+             <div class="about-image-wrapper">
+                 <img src="src/assets/products/e898fba2-2563-4153-8f63-8fc200fdae05.jpg" alt="LAFRAN CONCEPT">
+             </div>
+        </div>
+    </section>
+
+    <!-- Products Collection -->
+    <section id="new-collection" class="products-section section container">
+        <div class="section-header">
+            <p class="section-tag" style="color: var(--accent-blue);">CATALOGUE</p>
+            <h2 class="section-title" data-reveal>NOVA COLEÇÃO</h2>
+        </div>
+        <div class="product-grid" id="product-grid">
+            <!-- Rendered via JS -->
+            <div class="loading">Iniciando experiência...</div>
+        </div>
+    </section>
+
+    <!-- Footer v2 -->
+    <footer class="section container" style="border-top: 1px solid var(--glass-border); padding: 100px 20px; display: flex; flex-direction: column; align-items: center; gap: 40px;">
+        <div style="display: flex; gap: 60px; text-transform: uppercase; font-size: 0.7rem; opacity: 0.5; letter-spacing: 2px;">
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">WhatsApp</a>
+        </div>
+        <h3 class="logo" style="font-size: 10vw; opacity: 0.1; letter-spacing: 20px; line-height: 1;">LAFRAN</h3>
+        <p style="color: var(--text-muted); font-size: 0.7rem; opacity: 0.3; text-transform: uppercase; letter-spacing: 3px;">
+            © 2026 LAFRAN STUDIOS. DESIGNED FOR THE BOLD.
+        </p>
+        <p style="color: var(--text-muted); font-size: 0.7rem; opacity: 0.5;">
+            Desenvolvido por <a href="http://santirine.com.br/" target="_blank" style="color: var(--white); font-weight: 500; text-decoration: none;">Santirine Tech</a>
+        </p>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>CARRINHO</h3>
+            <span class="cart-close" id="cart-close">&times;</span>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Items via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>SUBTOTAL</span>
+                <span id="cart-total-value">R$ 0,00</span>
+            </div>
+            <button class="btn-checkout" id="open-checkout">FINALIZAR COMPRA</button>
+        </div>
+    </aside>
+
+    <!-- Checkout Modal -->
+    <div class="modal-checkout" id="checkout-modal">
+        <div class="step-indicator">
+            <div class="step active" id="step-1-indicator"></div>
+            <div class="step" id="step-2-indicator"></div>
+            <div class="step" id="step-3-indicator"></div>
+            <div class="step" id="step-4-indicator"></div>
+        </div>
+
+        <!-- Step 1: Personal Data -->
+        <div class="checkout-step active" id="step-1">
+            <h2 style="margin-bottom: 20px;">DADOS PESSOAIS</h2>
+            <div class="form-group">
+                <label>NOME COMPLETO</label>
+                <input type="text" id="checkout-nome" placeholder="SEU NOME">
+            </div>
+            <div class="form-group">
+                <label>E-MAIL</label>
+                <input type="email" id="checkout-email" placeholder="seu@email.com">
+            </div>
+            <div class="form-group">
+                <label>WHATSAPP / TELEFONE</label>
+                <input type="tel" id="checkout-tel" placeholder="(00) 00000-0000">
+            </div>
+            <button class="btn-checkout" id="next-to-address">PROXIMO: ENDEREÇO</button>
+        </div>
+
+        <!-- Step 2: Address -->
+        <div class="checkout-step" id="step-2">
+            <h2 style="margin-bottom: 20px;">ENDEREÇO DE ENTREGA</h2>
+            <div class="form-group">
+                <label>CEP</label>
+                <input type="text" id="checkout-cep" placeholder="00000-000">
+            </div>
+            <div class="form-group">
+                <label>RUA / LOGRADOURO</label>
+                <input type="text" id="checkout-rua" placeholder="NOME DA RUA">
+            </div>
+            <div class="form-row">
+                <div class="form-group" style="flex: 0.3;">
+                    <label>NÚMERO</label>
+                    <input type="text" id="checkout-numero">
+                </div>
+                <div class="form-group" style="flex: 0.7;">
+                    <label>COMPLEMENTO</label>
+                    <input type="text" id="checkout-complemento">
+                </div>
+            </div>
+            <button class="btn-checkout" id="next-to-payment">PROXIMO: PAGAMENTO</button>
+        </div>
+
+        <!-- Step 3: Payment (Mercado Pago Style) -->
+        <div class="checkout-step" id="step-3">
+            <h2 style="margin-bottom: 20px;">MÉTODO DE PAGAMENTO</h2>
+            <div class="payment-options">
+                <div class="payment-option" data-method="pix">
+                    <img src="https://logopng.com.br/logos/pix-106.png" alt="PIX">
+                    <p>PIX</p>
+                </div>
+                <div class="payment-option" data-method="card">
+                    <img src="https://logodownload.org/wp-content/uploads/2019/06/mercado-pago-logo-0.png" alt="Card">
+                    <p>CARTÃO / MP</p>
+                </div>
+                <div class="payment-option" data-method="cash">
+                    <p style="font-size: 1.5rem;">💵</p>
+                    <p>DINHEIRO</p>
+                </div>
+            </div>
+            
+            <div id="payment-pix-details" style="display: none;">
+               <div class="pix-qr">
+                   <p style="color: #000; font-size: 0.7rem; margin-bottom: 10px;">ESCANEIE O QR CODE PIX</p>
+                   <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=LAFRAN-STREETWEAR-PAYMENT" alt="QR PIX">
+               </div>
+            </div>
+
+            <button class="btn-checkout" id="confirm-order" style="margin-top: 30px;">CONFIRMAR PEDIDO</button>
+        </div>
+
+        <!-- Step 4: Success -->
+        <div class="checkout-step" id="step-4" style="text-align: center;">
+            <p style="font-size: 4rem;">✅</p>
+            <h2 style="margin-bottom: 20px;">PEDIDO REALIZADO!</h2>
+            <p id="success-message" style="color: var(--text-muted);">Seu pedido na LAFRAN foi processado com sucesso. Você receberá um e-mail de confirmação em breve.</p>
+            <button class="btn-checkout" onclick="location.reload()" style="margin-top: 30px;">VOLTAR PARA A LOJA</button>
+        </div>
+
+        <span class="cart-close" onclick="document.getElementById('checkout-modal').classList.remove('active')" style="position: absolute; top: 20px; right: 20px;">&times;</span>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="src/scripts/main.js"></script>
+</body>
+</html>
