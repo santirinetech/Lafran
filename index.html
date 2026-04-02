@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LAFRAN | ESTAMPARIA E MARCA PRÓPRIA</title>
-    <meta name="description" content="LAFRAN - Estamparia premium com marca própria e coleções exclusivas. Nova coleção 333 e Angelic Vibes disponível agora.">
-    
+    <meta name="description"
+        content="LAFRAN - Estamparia premium com marca própria e coleções exclusivas. Nova coleção 333 e Angelic Vibes disponível agora.">
+
     <!-- Styles -->
     <link rel="stylesheet" href="src/styles/main.css">
     <link rel="stylesheet" href="src/styles/components.css">
-    
+
     <!-- Favicon Simulation -->
     <link rel="icon" type="image/png" href="src/assets/products/e898fba2-2563-4153-8f63-8fc200fdae05.jpg">
 
     <!-- Supabase SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
+
 <body>
 
     <!-- Promo Banner -->
-    <div style="background: var(--white); color: var(--bg-dark); text-align: center; font-size: 0.7rem; font-weight: 700; padding: 8px; letter-spacing: 2px;">
+    <div
+        style="background: var(--white); color: var(--bg-dark); text-align: center; font-size: 0.7rem; font-weight: 700; padding: 8px; letter-spacing: 2px;">
         FRETE GRÁTIS EM COMPRAS ACIMA DE R$ 300
     </div>
 
@@ -34,7 +38,8 @@
             <a href="#" style="font-size: 1.2rem;">🔍</a>
             <a href="#" style="font-size: 1.2rem; position: relative;">
                 🛒
-                <span id="cart-count" style="position: absolute; top: -5px; right: -10px; background: var(--accent-blue); color: var(--bg-dark); font-size: 0.6rem; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s;">0</span>
+                <span id="cart-count"
+                    style="position: absolute; top: -5px; right: -10px; background: var(--accent-blue); color: var(--bg-dark); font-size: 0.6rem; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s;">0</span>
             </a>
         </div>
     </header>
@@ -63,14 +68,14 @@
             <span class="about-tag">STORY</span>
             <h2 class="about-title">A ARTE DO <br> STREETWEAR</h2>
             <p class="about-text">
-                A LAFRAN nasceu da intersecção entre o Caos Urbano e a Ordem Estética. 
+                A LAFRAN nasceu da intersecção entre o Caos Urbano e a Ordem Estética.
                 Cada estampa é um manifesto visual projetado para quem não aceita o óbvio.
             </p>
         </div>
         <div class="about-visual" data-reveal>
-             <div class="about-image-wrapper">
-                 <img src="src/assets/products/e898fba2-2563-4153-8f63-8fc200fdae05.jpg" alt="LAFRAN CONCEPT">
-             </div>
+            <div class="about-image-wrapper">
+                <img src="src/assets/products/e898fba2-2563-4153-8f63-8fc200fdae05.jpg" alt="LAFRAN CONCEPT">
+            </div>
         </div>
     </section>
 
@@ -89,18 +94,22 @@
     </section>
 
     <!-- Footer v2 -->
-    <footer class="section container" style="border-top: 1px solid var(--glass-border); padding: 100px 20px; display: flex; flex-direction: column; align-items: center; gap: 40px;">
-        <div style="display: flex; gap: 60px; text-transform: uppercase; font-size: 0.7rem; opacity: 0.5; letter-spacing: 2px;">
-            <a href="#">Instagram</a>
+    <footer class="section container"
+        style="border-top: 1px solid var(--glass-border); padding: 100px 20px; display: flex; flex-direction: column; align-items: center; gap: 40px;">
+        <div
+            style="display: flex; gap: 60px; text-transform: uppercase; font-size: 0.7rem; opacity: 0.5; letter-spacing: 2px;">
+            <a href="https://www.instagram.com/lafran_oficial?igsh=dGMzcjBidXVmZjJn">Instagram</a>
             <a href="#">TikTok</a>
             <a href="#">WhatsApp</a>
         </div>
         <h3 class="logo" style="font-size: 10vw; opacity: 0.1; letter-spacing: 20px; line-height: 1;">LAFRAN</h3>
-        <p style="color: var(--text-muted); font-size: 0.7rem; opacity: 0.3; text-transform: uppercase; letter-spacing: 3px;">
+        <p
+            style="color: var(--text-muted); font-size: 0.7rem; opacity: 0.3; text-transform: uppercase; letter-spacing: 3px;">
             © 2026 LAFRAN STUDIOS. DESIGNED FOR THE BOLD.
         </p>
         <p style="color: var(--text-muted); font-size: 0.7rem; opacity: 0.5;">
-            Desenvolvido por <a href="http://santirine.com.br/" target="_blank" style="color: var(--white); font-weight: 500; text-decoration: none;">Santirine Tech</a>
+            Desenvolvido por <a href="http://santirine.com.br/" target="_blank"
+                style="color: var(--white); font-weight: 500; text-decoration: none;">Santirine Tech</a>
         </p>
     </footer>
 
@@ -150,13 +159,27 @@
             <button class="btn-checkout" id="next-to-address">PROXIMO: ENDEREÇO</button>
         </div>
 
-        <!-- Step 2: Address -->
+        <!-- Step 2: Address & Shipping -->
         <div class="checkout-step" id="step-2">
-            <h2 style="margin-bottom: 20px;">ENDEREÇO DE ENTREGA</h2>
-            <div class="form-group">
-                <label>CEP</label>
-                <input type="text" id="checkout-cep" placeholder="00000-000">
+            <h2 style="margin-bottom: 20px;">ENTREGA OU RETIRADA</h2>
+            
+            <div class="delivery-options" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px;">
+                <div class="delivery-option active" data-type="entrega" id="delivery-entrega" style="border: 1px solid var(--accent-blue); padding: 15px; border-radius: 8px; text-align: center; cursor: pointer;">
+                    <p>Entrega (Correios/Motoboy)</p>
+                </div>
+                <div class="delivery-option" data-type="retirada" id="delivery-retirada" style="border: 1px solid rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; text-align: center; cursor: pointer;">
+                    <p>Retirada no Centro de Aracruz</p>
+                </div>
             </div>
+
+            <div id="address-fields">
+                <div class="form-group">
+                    <label>CEP</label>
+                    <input type="text" id="checkout-cep" placeholder="00000-000">
+                </div>
+                <div id="shipping-result" style="font-size: 0.8rem; color: var(--accent-blue); margin-bottom: 15px; display: none;">
+                    FRETE: <span id="shipping-value">R$ 0,00</span>
+                </div>
             <div class="form-group">
                 <label>RUA / LOGRADOURO</label>
                 <input type="text" id="checkout-rua" placeholder="NOME DA RUA">
@@ -170,15 +193,15 @@
                     <label>COMPLEMENTO</label>
                     <input type="text" id="checkout-complemento">
                 </div>
+                </div>
             </div>
-            <button class="btn-checkout" id="next-to-payment">PROXIMO: PAGAMENTO</button>
+            <button class="btn-checkout" id="next-to-payment" style="margin-top: 20px;">PROXIMO: PAGAMENTO</button>
         </div>
 
         <!-- Step 3: Payment (Mercado Pago Style) -->
         <div class="checkout-step" id="step-3">
-            <h2 style="margin-bottom: 20px;">MÉTODO DE PAGAMENTO</h2>
             <div class="payment-options">
-                <div class="payment-option" data-method="pix">
+                <div class="payment-option active" data-method="pix">
                     <img src="https://logopng.com.br/logos/pix-106.png" alt="PIX">
                     <p>PIX</p>
                 </div>
@@ -191,12 +214,45 @@
                     <p>DINHEIRO</p>
                 </div>
             </div>
-            
-            <div id="payment-pix-details" style="display: none;">
-               <div class="pix-qr">
-                   <p style="color: #000; font-size: 0.7rem; margin-bottom: 10px;">ESCANEIE O QR CODE PIX</p>
-                   <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=LAFRAN-STREETWEAR-PAYMENT" alt="QR PIX">
-               </div>
+
+            <!-- Order Summary [NEW] -->
+            <div id="order-summary" style="margin-top: 30px; padding: 25px; border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; background: rgba(255,255,255,0.02);">
+                <h3 style="font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 20px; opacity: 0.5; text-transform: uppercase;">Resumo do Pedido</h3>
+                <div id="summary-items-list" style="margin-bottom: 20px;"></div>
+                
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+                        <span style="opacity: 0.6;">SUBTOTAL</span>
+                        <span id="summary-subtotal">R$ 0,00</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+                        <span style="opacity: 0.6;">FRETE</span>
+                        <span id="summary-shipping">R$ 0,00</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 1.1rem; font-weight: 700; color: var(--accent-blue); margin-top: 10px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <span>TOTAL DO PEDIDO</span>
+                        <span id="summary-total">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="payment-pix-details" style="display: none; margin-top: 30px;">
+                <div class="pix-qr" style="background: var(--white); padding: 30px; border-radius: 15px; text-align: center;">
+                    <p style="color: #000; font-size: 0.8rem; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Escaneie o QR Code PIX</p>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=LAFRAN-STREETWEAR-PAYMENT"
+                        alt="QR PIX" style="display: block; margin: 0 auto; width: 180px;">
+                    <p style="color: #000; font-size: 0.7rem; margin-top: 20px; opacity: 0.6;">Confirmação automática após o pagamento</p>
+                </div>
+            </div>
+
+            <div id="payment-card-details" style="display: none; padding: 20px; border-radius: 12px; background: rgba(255,255,255,0.05); text-align: center;">
+                <p style="font-size: 0.9rem; margin-bottom: 10px;">Você será redirecionado ao <span style="color: #009ee3; font-weight: 700;">Mercado Pago</span> com segurança para finalizar usando cartão.</p>
+                <img src="https://logodownload.org/wp-content/uploads/2019/06/mercado-pago-logo-0.png" style="height: 25px; opacity: 0.8;">
+            </div>
+
+            <div id="payment-cash-details" style="display: none; padding: 20px; border-radius: 12px; background: rgba(255,255,255,0.05); text-align: center;">
+                <p style="font-size: 0.9rem; margin-bottom: 10px;">💵 Pagamento em espécie na <span id="cash-method-text">entrega</span>.</p>
+                <p style="font-size: 0.7rem; color: var(--text-muted);">Por favor, informe se precisará de troco no WhatsApp após o pedido.</p>
             </div>
 
             <button class="btn-checkout" id="confirm-order" style="margin-top: 30px;">CONFIRMAR PEDIDO</button>
@@ -206,14 +262,18 @@
         <div class="checkout-step" id="step-4" style="text-align: center;">
             <p style="font-size: 4rem;">✅</p>
             <h2 style="margin-bottom: 20px;">PEDIDO REALIZADO!</h2>
-            <p id="success-message" style="color: var(--text-muted);">Seu pedido na LAFRAN foi processado com sucesso. Você receberá um e-mail de confirmação em breve.</p>
-            <button class="btn-checkout" onclick="location.reload()" style="margin-top: 30px;">VOLTAR PARA A LOJA</button>
+            <p id="success-message" style="color: var(--text-muted);">Seu pedido na LAFRAN foi processado com sucesso.
+                Você receberá um e-mail de confirmação em breve.</p>
+            <button class="btn-checkout" onclick="location.reload()" style="margin-top: 30px;">VOLTAR PARA A
+                LOJA</button>
         </div>
 
-        <span class="cart-close" onclick="document.getElementById('checkout-modal').classList.remove('active')" style="position: absolute; top: 20px; right: 20px;">&times;</span>
+        <span class="cart-close" onclick="document.getElementById('checkout-modal').classList.remove('active')"
+            style="position: absolute; top: 20px; right: 20px;">&times;</span>
     </div>
 
     <!-- Scripts -->
     <script type="module" src="src/scripts/main.js"></script>
 </body>
+
 </html>

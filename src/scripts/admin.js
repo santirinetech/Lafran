@@ -87,20 +87,20 @@ async function loadProducts() {
 function renderAdminProducts(products) {
     const grid = document.getElementById('admin-grid');
     if (products.length === 0) {
-        grid.innerHTML = '<p class="section-tag">NENHUM PRODUTO ENCONTRADO.</p>';
+        grid.innerHTML = '<p class="section-tag">NENHUM PRODUTO ENCONTRADO NA COLEÇÃO.</p>';
         return;
     }
 
     grid.innerHTML = products.map(p => `
         <div class="admin-card">
             <img src="${p.image_url}" class="admin-card-img">
+            <div class="admin-card-info">
+                <p style="font-weight: 700; font-size: 0.9rem; margin-bottom: 5px;">${p.name}</p>
+                <p style="font-size: 0.7rem; color: var(--accent-blue); letter-spacing: 1px;">${p.price} | ${p.collection}</p>
+            </div>
             <div class="admin-card-actions">
-                <p style="font-weight: 700;">${p.name}</p>
-                <p style="font-size: 0.7rem; opacity: 0.7;">${p.price}</p>
-                <div style="display: flex; gap: 10px; margin-top: 15px;">
-                    <button class="btn-primary" onclick="window.editProduct(${p.id})" style="padding: 10px 15px; font-size: 0.6rem;">EDITAR</button>
-                    <button class="btn-primary" onclick="window.deleteProduct(${p.id})" style="padding: 10px 15px; font-size: 0.6rem; background: #ff4d4d; border-color: #ff4d4d;">EXCLUIR</button>
-                </div>
+                <button class="btn-primary" onclick="window.editProduct(${p.id})" style="flex: 1; padding: 12px; font-size: 0.6rem;">EDITAR</button>
+                <button class="btn-primary" onclick="window.deleteProduct(${p.id})" style="flex: 1; padding: 12px; font-size: 0.6rem; background: #ff4d4d; border-color: #ff4d4d;">EXCLUIR</button>
             </div>
         </div>
     `).join('');

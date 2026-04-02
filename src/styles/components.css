@@ -167,6 +167,8 @@
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%);
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .step-indicator {
@@ -249,16 +251,68 @@
     margin-inline: auto;
 }
 
-.pix-qr {
-    text-align: center;
+.size-btn {
+    width: 35px;
+    height: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.size-btn.active {
     background: var(--white);
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 20px;
+    color: var(--bg-dark);
+    border-color: var(--white);
+}
+
+.size-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .pix-qr img {
+    border-radius: 10px;
     width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* DELIVERY OPTIONS */
+.delivery-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.delivery-option {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.delivery-option:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.delivery-option.active {
+    border-color: var(--accent-blue);
+    background: rgba(0, 212, 255, 0.05);
+}
+
+.delivery-option p {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0;
 }
 
 /* SKELETON LOADING */
